@@ -14,19 +14,26 @@
 // массива ingredients создаст отдельный li, после
 // чего вставит все li за одну операцию в список ul.ingredients.
 //  Для создания DOM-узлов используй document.createElement()
+// {/* <ul id="ingredients"></ul> */}
+
+
 const ingredients = [
-  "Кортошка",
+  "Картошка",
   "Грибы",
   "Чеснок",
   "Помидоры",
   "Зелень",
-  "Приправы",
+  "Приправы"
 ];
 let ulList = document.getElementById("ingredients");
-const foodIngredients = ingredients.forEach (ingredient => {
+
+const foodIngredients = ingredients.forEach(ingredient => {
+ 
   let items = document.createElement("li");
   items.innerHTML = ingredient;
   ulList.append(items);
-  parent.append(...items);
+  parent.append(...items)
+
 });
+
 console.log(foodIngredients);
