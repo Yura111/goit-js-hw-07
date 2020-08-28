@@ -25,15 +25,14 @@ const ingredients = [
   "Зелень",
   "Приправы"
 ];
-let ulList = document.getElementById("ingredients");
+const ingredientsList = document.querySelector("#ingredients");
+const createIngredientsList = document.createDocumentFragment();
 
-const foodIngredients = ingredients.forEach(ingredient => {
- 
-  let items = document.createElement("li");
-  items.innerHTML = ingredient;
-  ulList.append(items);
-  parent.append(...items)
-
+ingredients.forEach(ingredient => {
+  const createItem = document.createElement("li");
+  createItem.textContent = ingredient;
+  createIngredientsList.prepend(createItem);
 });
 
-console.log(foodIngredients);
+ingredientsList.append(createIngredientsList);
+
