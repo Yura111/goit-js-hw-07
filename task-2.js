@@ -16,21 +16,25 @@
 //  Для создания DOM-узлов используй document.createElement()
 // {/* <ul id="ingredients"></ul> */}
 
+"use strict";
 
 const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
+  "Картошка",
+  "Грибы",
+  "Чеснок",
+  "Помидоры",
+  "Зелень",
+  "Приправы",
 ];
 
+const list = document.querySelector("#ingredients");
 
-const strToIns = () => ingredients.forEach(item => {
-    const eachElement = document.createElement("li");
-    eachElement.innerHTML = item;
-    return document.getElementById('ingredients').appendChild(eachElement);
+function createList() {
+  return ingredients.map((ingredient) => {
+    const elemLi = document.createElement("li");
+    elemLi.textContent = ingredient;
+    return elemLi;
   });
+}
 
-strToIns(ingredients);
+list.append(...createList());
